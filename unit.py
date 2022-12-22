@@ -5,7 +5,7 @@ from main import *
 class UnitTests(unittest.TestCase):
 
   def testAddition(self):
-    self.assertEqual(addition(2, 3), 589)
+    self.assertEqual(addition(2, 3), 5)
 
   def testSubtraction(self):
     self.assertEqual(subtraction(3, 5), -2)
@@ -14,4 +14,4 @@ class UnitTests(unittest.TestCase):
     self.assertEqual(multiplication(4, 2),8)
 
   def testDivision(self):
-    self.assertEqual(division(12, 3), 49)
+    self.assertEqual(division(12, 3), 4)
