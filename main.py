@@ -1,40 +1,36 @@
-def sum(x1, x2):
-    return x1 + x2
-def mul(x1, x2):
-    return x1 * x2
-def sub(x1, x2):
-    return x1 - x2
-def div(x1, x2):
-    if x2 != 0:
-      return x1/x2
-def modd(x1,x2):
-    if x2 != 0:
-        return x1%x2
+def addition(x, y):
+    return x + y
+
+def subtraction(x, y):
+    return x - y
+
+def multiplication(x, y):
+    return x * y
+
+def division(x, y):
+    if y != 0:
+        return x / y
 
 
-summa = 0
+flag = True
+file = open("unit.txt")
+while flag:
+    line = file.readline()
+    if not line:
+        flag = False
 
-File = open("unit.txt") 
-p = File.readlines()
-for i in range(len(p)):
-    str = p[i]
-    if "+" in str:
-        for j in range(len(str)-1):
-            if str[j] == "+":
-                summa = j
-        print(sum(int(str[:summa]),int(str[summa+1:])))
-    if "*" in str:
-        for j in range(len(str) - 1):
-            if str[j] == "*":
-                summa = j
-        print(mul(int(str[:summa]), int(str[summa+1:])))
-    if "-" in str:
-        for j in range(len(str) - 1):
-            if str[j] == "-":
-                summa = j
-        print(sub(int(str[:summa]), int(str[summa+1:])))
-    if "/" in str:
-        for j in range(len(str) - 1):
-            if str[j] == "/":
-                summa = j
-        print(div(int(str[:summa]), int(str[summa+1:])))
+    if '+' in line:
+        ind = line.find('+')
+        print(addition(int(line[:ind]), int(line[ind + 1:])))
+
+    if '-' in line:
+        ind = line.find('-')
+        print(subtraction(int(line[:ind]), int(line[ind + 1:])))
+
+    if '*' in line:
+        ind = line.find('*')
+        print(multiplication(int(line[:ind]), int(line[ind + 1:])))
+
+    if '/' in line:
+        ind = line.find('/')
+        print(division(int(line[:ind]), int(line[ind + 1:])))
